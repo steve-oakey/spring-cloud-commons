@@ -19,18 +19,19 @@ package org.springframework.cloud.client.discovery.noop;
 import java.util.Collections;
 import java.util.List;
 
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.discovery.DiscoveryServiceInstance;
 
 /**
  * DiscoveryClient used when no implementations are found on the classpath
+ * 
  * @author Dave Syer
  */
 public class NoopDiscoveryClient implements DiscoveryClient {
 
-	private final ServiceInstance instance;
+	private final DiscoveryServiceInstance instance;
 
-	public NoopDiscoveryClient(ServiceInstance instance) {
+	public NoopDiscoveryClient(DiscoveryServiceInstance instance) {
 		this.instance = instance;
 	}
 
@@ -40,12 +41,12 @@ public class NoopDiscoveryClient implements DiscoveryClient {
 	}
 
 	@Override
-	public ServiceInstance getLocalServiceInstance() {
+	public DiscoveryServiceInstance getLocalServiceInstance() {
 		return this.instance;
 	}
 
 	@Override
-	public List<ServiceInstance> getInstances(String serviceId) {
+	public List<DiscoveryServiceInstance> getInstances(String serviceId) {
 		return Collections.emptyList();
 	}
 

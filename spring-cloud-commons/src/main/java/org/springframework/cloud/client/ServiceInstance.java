@@ -18,6 +18,8 @@ package org.springframework.cloud.client;
 
 import java.net.URI;
 
+import org.springframework.ui.context.Theme;
+
 /**
  * Represents an instance of a Service in a Discovery System
  * @author Spencer Gibb
@@ -27,23 +29,25 @@ public interface ServiceInstance {
 	/**
 	 * @return the service id as register by the DiscoveryClient
 	 */
-	public String getServiceId();
+	 String getServiceId();
 
 	/**
 	 * @return the hostname of the registered ServiceInstance
 	 */
-	public String getHost();
+	 String getHost();
 
 	/**
 	 * @return the port of the registered ServiceInstance
 	 */
-	public int getPort();
+	 int getPort();
 
 	/**
-	 * @return ifthe port of the registered ServiceInstance is https or not
+	 * @return if the port of the registered ServiceInstance is https or not
 	 */
-	public boolean isSecure();
+	 boolean isSecure();
 
-	public URI getUri();
-
+	/**
+	 * @return URI of the service.
+	 */
+	 URI getUri();
 }

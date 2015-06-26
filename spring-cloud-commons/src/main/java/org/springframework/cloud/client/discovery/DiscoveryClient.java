@@ -34,16 +34,16 @@ public interface DiscoveryClient {
 	public String description();
 
 	/**
-	 * @return ServiceInstance with information used to register the local service
+	 * @return DiscoveryServiceInstance with information used to register the local service
 	 */
-	public ServiceInstance getLocalServiceInstance();
+	public DiscoveryServiceInstance getLocalServiceInstance();
 
 	/**
-	 * Get all ServiceInstances associated with a particular serviceId
+	 * Get all DiscoveryServiceInstance associated with a particular serviceId
 	 * @param serviceId the serviceId to query
-	 * @return a List of ServiceInstance
+	 * @return a List of DiscoveryServiceInstance
 	 */
-	public List<ServiceInstance> getInstances(String serviceId);
+	public List<DiscoveryServiceInstance> getInstances(String serviceId);
 
 	/**
 	 * @return all known service ids
